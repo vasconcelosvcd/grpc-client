@@ -12,10 +12,6 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-const (
-	defaultValue = 2
-)
-
 var (
 	addr = flag.String("addr", "localhost:50051", "the address to connect to")
 )
