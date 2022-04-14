@@ -41,5 +41,11 @@ func main() {
 		log.Fatalf("could not double: %v", err)
 	}
 
+	r2, err := c.TripleNum(ctx, &pb.TripleNumRequest{Num: int32(*value)})
+	if err != nil {
+		log.Fatalf("could not double: %v", err)
+	}
+
 	log.Printf("Doubled: %v", r.GetDoubled())
+	log.Printf("Tripled: %v", r2.GetTriple())
 }
