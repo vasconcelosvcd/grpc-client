@@ -18,7 +18,7 @@ const (
 
 var (
 	addr  = flag.String("addr", "localhost:50051", "the address to connect to")
-	value = flag.Int("name", defaultValue, "Number to double")
+	value = flag.Int("value", defaultValue, "Number to double")
 )
 
 func main() {
@@ -41,11 +41,5 @@ func main() {
 		log.Fatalf("could not double: %v", err)
 	}
 
-	r2, err := c.TripleNum(ctx, &pb.TripleNumRequest{Num: 2})
-	if err != nil {
-		log.Fatalf("could not triple: %v", err)
-	}
-
 	log.Printf("Doubled: %v", r.GetDoubled())
-	log.Printf("Tipled: %v", r2.GetTripled())
 }
